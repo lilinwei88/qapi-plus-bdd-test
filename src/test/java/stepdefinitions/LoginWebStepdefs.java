@@ -25,7 +25,7 @@ public class LoginWebStepdefs extends commonWebStepdefs {
         driver = new ChromeDriver(chService, options);
     }
 
-    @Given("^qa environment is up$")
+    @Given("^I am on the Login Page$")
     public void qaEnvironmentIsUp() {
         loginPage = new LoginPage(driver, loadProp("baseUrl"));
     }

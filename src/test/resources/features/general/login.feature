@@ -1,8 +1,9 @@
+@member
 Feature: Can I login to qapi?
   Everybody wants to know whether we can login to qapi?
 
   Scenario Outline: Successful login
-    Given qa environment is up
+    Given I am on the Login Page
     When <clientId> login with <userId> and <password>
     Then I should see homepage
     Examples:
@@ -11,7 +12,7 @@ Feature: Can I login to qapi?
 
 
   Scenario Outline: Failed login using wrong credentials
-    Given qa environment is up
+    Given I am on the Login Page
     When <clientId> login with <userId> and <password>
     Then I should not see homepage
     Examples:

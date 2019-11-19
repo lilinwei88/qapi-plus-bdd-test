@@ -1,0 +1,13 @@
+target
+build
+bin
+.gradle
+.settings
+.idea
+.project
+.eclipse
+.log
+.classpath
+.DS_Store
+.metadata
+CheckStyleReport.txt
