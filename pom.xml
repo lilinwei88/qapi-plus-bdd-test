@@ -199,12 +199,12 @@
 
     <profiles>
         <profile>
-            <id>api-lab-nightly</id>
+            <id>api-dev-nightly</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
                 <property>
                     <name>env</name>
-                    <value>lab</value>
+                    <value>dev</value>
                 </property>
             </activation>
             <build>
@@ -215,12 +215,12 @@
                         <version>${maven-surefire-plugin-version}</version>
                         <configuration>
                             <testFailureIgnore>true</testFailureIgnore>
-                            <systemPropertiesFile>${project.build.directory}/classes/lab.properties
+                            <systemPropertiesFile>${project.build.directory}/classes/dev.properties
                             </systemPropertiesFile>
                             <parallel>methods</parallel>
                             <threadCount>1</threadCount>
                             <suiteXmlFiles>
-                                <suiteXmlFile>suites/lab/nightlytests.xml</suiteXmlFile>
+                                <suiteXmlFile>suites/dev/nightlytests.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>
