@@ -17,10 +17,10 @@ public class LoginPage extends BasePage {
      * @param password password
      * @return home page
      */
-    public HomePage login(String clientId, String username, String password) {
-        fillTextField(getElement("clientId", LocatorType.NAME), clientId);
-        fillTextField(getElement("userName", LocatorType.NAME), username);
-        fillTextField(getElement("password", LocatorType.NAME), password);
-        return (HomePage) new HomePage(driver).clickOnElement("loginClass", LocatorType.CLASS_NAME);
+    public HomePage login( String username, String password) {
+//        fillTextField(getElement("clientId", LocatorType.ID), clientId);
+        fillTextField(getElement("userName", LocatorType.ID), username);
+        fillTextField(getElement("password", LocatorType.ID), password);
+        return (HomePage) new HomePage(driver).clickOnElement("loginId", LocatorType.ID);
     }
 }

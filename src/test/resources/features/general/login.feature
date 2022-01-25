@@ -4,18 +4,18 @@ Feature: Can I login to qapi?
 
   Scenario Outline: Successful login
     Given I am on the Login Page
-    When <clientId> login with <userId> and <password>
+    When login with <userId> and <password>
     Then I should see homepage
     Examples:
-      |clientId                  |userId                    |password         |
-      |"qate"                    |"larak625@gmail.com"      |"P@$$w0rd"       |
+      |userId                       |password         |
+      |"alexluo0591@gmail.com"      |"Polyphia2333"   |
 
 
   Scenario Outline: Failed login using wrong credentials
     Given I am on the Login Page
-    When <clientId> login with <userId> and <password>
+    When login with <userId> and <password>
     Then I should not see homepage
     Examples:
-      |clientId                  |userId                    |password         |
-      |"qate"                    |"larak625@gmail.com"      |"Password"       |
-      |"qate"                    |"lilin5@gmail.com"        |"P@$$w0rd"       |
+      |userId                    |password         |
+      |"larak625@gmail.com"      |"Password"       |
+      |"lilin5@gmail.com"        |"P@$$w0rd"       |

@@ -30,26 +30,26 @@ public class LoginWebStepdefs extends commonWebStepdefs {
         loginPage = new LoginPage(driver, loadProp("baseUrl"));
     }
 
-    @When("^\"([^\"]*)\" login with \"([^\"]*)\" and \"([^\"]*)\"$")
-    public void loginWithClientNameAndUserIdWithPassword(String clientId, String userId, String password) {
-        homePage = loginPage.login(clientId, userId,password);
+    @When("login with \"([^\"]*)\" and \"([^\"]*)\"$")
+    public void loginWithClientNameAndUserIdWithPassword(String userId, String password) {
+        homePage = loginPage.login( userId,password);
     }
 
     @Then("^I should see homepage$")
     public void iShouldSeeHomepage() {
-        Assert.assertTrue(homePage.confirmElementsOnHomePage("textXpath", "Hi"));
-        homePage.logout();
+        Assert.assertTrue(homePage.confirmElementsOnHomePage("textXpath", "Welcome"));
+//        homePage.logout();
     }
 
     @Then("^I should not see homepage$")
     public void iShouldNotSeeHomepage() {
-        Assert.assertFalse(homePage.confirmElementsOnHomePage("textXpath", "Hi"));
-        homePage.logout();
+        Assert.assertFalse(homePage.confirmElementsOnHomePage("textXpath", "Welcome"));
+//        homePage.logout();
     }
 
     @When("^\"([^\"]*)\" admin login with \"([^\"]*)\" and \"([^\"]*)\"$")
     public void adminLoginWithUserIdAndPassword(String clientId, String userId, String password) {
-        homePage = loginPage.login(clientId, userId,password);
+        homePage = loginPage.login(userId,password);
         homePage.logout();
     }
 
