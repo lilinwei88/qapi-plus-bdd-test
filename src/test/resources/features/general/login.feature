@@ -8,7 +8,7 @@ Feature: Can I login to qapi?
     Then I should see homepage
     Examples:
       |userId                       |password         |
-      |"li.linwei88@gmail.com"      |"Fuzhou15*"       |
+      |"alexluo0591@gmail.com"      |"Polyphia2333"   |
 
 
   Scenario Outline: Failed login using wrong credentials
